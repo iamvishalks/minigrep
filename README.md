@@ -35,16 +35,16 @@ The Config struct holds the configuration options provided by the user. It has t
 
 ##Functions
 
-``pub fn build<'a>(args: &'a [String]) -> Result<Config, &'static str>``
+```pub fn build<'a>(args: &'a [String]) -> Result<Config, &'static str>```
 This function takes a reference to a vector of String arguments and returns a Result containing a Config object or a static string error message. It parses the arguments and builds the Config object. If there are not enough arguments, an error message is returned.
 
-``pub fn run(&self) -> Result<(), Box<dyn Error>>``
+```pub fn run(&self) -> Result<(), Box<dyn Error>>```
 This function takes a reference to a Config object and returns a Result containing either an empty tuple or a boxed dynamic error. It runs the search and prints the lines in the file that contain the query string. If there is an error reading the file, it is returned as a boxed dynamic error.
 
-``pub fn search_sensitive<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str>``
+```pub fn search_sensitive<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str>```
 This function takes a string query and the contents of a file, and returns a vector of string slices representing the lines in the file that contain the query string, in a case-sensitive manner.
 
-``pub fn search<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str>``
+```pub fn search<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str>```
 This function takes a string query and the contents of a file, and returns a vector of string slices representing the lines in the file that contain the query string, in a case-insensitive manner.
 
 ##Tests
